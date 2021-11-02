@@ -5,5 +5,5 @@ import reactor.core.publisher.Mono;
 
 public interface PersonRepository {
 
-    //Mono<Person> create(Person person);
+    Mono<Person> create(Person person);
 }

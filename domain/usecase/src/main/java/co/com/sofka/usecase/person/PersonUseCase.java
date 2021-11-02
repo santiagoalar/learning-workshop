@@ -9,11 +9,11 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class PersonUseCase {
 
-    //private final PersonRepository personRepository;
+    private final PersonRepository personRepository;
 
     public Mono<Person> execute(Person person){
-        //return personRepository.create(person);
-        return Mono.just(person);
+        return personRepository.create(person);
+        //return Mono.just(person);
     }
 
     public Mono<String> execute2(){
