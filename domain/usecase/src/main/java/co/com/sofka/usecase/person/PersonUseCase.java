@@ -4,6 +4,7 @@ import co.com.sofka.model.person.Person;
 import co.com.sofka.model.person.gateways.PersonRepository;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RequiredArgsConstructor
@@ -19,4 +20,15 @@ public class PersonUseCase {
     public Mono<String> execute2(){
         return Mono.just("Hola mundo");
     }
+
+
+    public Flux<Person> getAllPerson(){
+        return personRepository.findAll();
+    }
+
+    public Flux<Person> findPersonByName(String name){
+        return personRepository.findByName(name);
+    }
+
 }
+

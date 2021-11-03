@@ -29,6 +29,14 @@ public class Handler {
         return ServerResponse.ok().body(personUseCase.execute2(), String.class);
     }
 
+    public Mono<ServerResponse> listenGetAllPerson(ServerRequest serverRequest){
+        return ServerResponse.ok().body(personUseCase.getAllPerson(), Person.class);
+    }
+
+    public Mono<ServerResponse> listenGetPersonByName(ServerRequest serverRequest){
+        return ServerResponse.ok().body(personUseCase.getAllPerson(), Person.class);
+    }
+
     /*public Mono<ServerResponse> listenGETUseCase(ServerRequest serverRequest) {
         // usecase.logic();
         return ServerResponse.ok().body("", String.class);

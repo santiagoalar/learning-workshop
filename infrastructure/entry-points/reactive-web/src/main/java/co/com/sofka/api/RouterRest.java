@@ -19,6 +19,9 @@ public RouterFunction<ServerResponse> routerFunction(Handler handler) {
 
     //return route(POST("/v2/person"), handler::listenPostUseCasePerson);
     return route(GET("/v2/person"), handler::listenGetUseCasePerson)
-            .andRoute(POST("/v2/person"), handler::listenPostUseCasePerson);
+            .andRoute(POST("/v2/person"), handler::listenPostUseCasePerson)
+            .andRoute(GET("/v2/person/all"), handler::listenGetAllPerson)
+            .andRoute(GET("/v2/person/"), handler::listenGetPersonByName);
+
     }
 }
